@@ -25,3 +25,20 @@ estados = st.multiselect("Selecione os estados", df_freq['Estado'].unique())
 if estados:
     df_filtrado = df[df['Nome_UF'].isin(estados)]
     st.write(df_filtrado)
+
+#Mapa Interativo das UBS por Estado
+# fig = px.scatter_geo(df,
+#                     lat=df.columns.,
+#                     lon=,
+#                     hover_name="name")
+
+#Gráfico de pizza
+grafico_pizza = px.pie(df_freq,
+                values='Frequência',
+                names='Estado',
+                )
+
+st.plotly_chart(grafico_pizza)
+
+#Histograma da Quantidade de UBS por Município
+
